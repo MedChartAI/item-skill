@@ -1,6 +1,6 @@
 {
-  "identifier": "BlanketSkill",
-  "name": "Blanket",
+  "identifier": "ItemSkill",
+  "name": "Item",
   "skillMetadata": {
       "sections": [
           {
