@@ -19,11 +19,11 @@ LOGGER = getLogger(__name__)
 # The logic of each skill is contained within its own class, which inherits
 # base methods from the MycroftSkill class with the syntax you can see below:
 # "class ____Skill(MycroftSkill)"
-class BlanketSkill(MycroftSkill):
+class ItemSkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
-        super(BlanketSkill, self).__init__(name="BlanketSkill")
+        super(ItemSkill, self).__init__(name="ItemSkill")
 
     @intent_handler(IntentBuilder('BlanketIntent').require('Action').require('Item'))
     def handle_blanket_intent(self, message):
@@ -68,5 +68,5 @@ class BlanketSkill(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return BlanketSkill()
+    return ItemSkill()
 
