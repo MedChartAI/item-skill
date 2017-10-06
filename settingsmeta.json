@@ -1,0 +1,31 @@
+{
+  "identifier": "BlanketSkill",
+  "name": "Blanket",
+  "skillMetadata": {
+      "sections": [
+          {
+              "name": "Room Information",
+              "fields": [
+                  {
+                      "name": "room_number",
+                      "type": "text",
+                      "label": "room_number",
+                      "value": ""
+                  },
+                  {
+                       "name": "account_sid",
+                        "type": "text",
+                        "label": "account_sid",
+                        "value": ""
+                  },
+                  {
+                      "name": "auth_token",
+                      "type": "text",
+                      "label": "auth_token",
+                      "value": ""
+                  }
+              ]
+          }
+      ]
+  }
+}
