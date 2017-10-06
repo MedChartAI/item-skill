@@ -23,6 +23,18 @@
                       "type": "text",
                       "label": "auth_token",
                       "value": ""
+                  },
+                  {
+                      "name": "to_number",
+                      "type": "text",
+                      "label": "to_number",
+                      "value": ""
+                  },
+                  {
+                      "name": "from_number",
+                      "type": "text",
+                      "label": "from_number",
+                      "value": ""
                   }
               ]
           }
