@@ -45,7 +45,6 @@ class ItemSkill(MycroftSkill):
             self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth_text("BLANKET ON WAY")
             time.sleep(300)
-            self.enclosure.activate_mouth_events()
             self.enclosure.mouth_reset()
 
         '''
