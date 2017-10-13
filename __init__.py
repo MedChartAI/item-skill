@@ -5,7 +5,7 @@ from os.path import dirname
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.skills.context import adds_context, removes_context
-from mycroft.util.log import getLogger
+from mycroft.util import LOG
 from twilio.rest import Client
 import time
 
@@ -14,7 +14,7 @@ __author__ = 'btotharye'
 
 # Logger: used for debug lines, like "LOGGER.debug(xyz)". These
 # statements will show up in the command line when running Mycroft.
-LOGGER = getLogger(__name__)
+
 
 
 # The logic of each skill is contained within its own class, which inherits
@@ -40,7 +40,7 @@ class ItemSkill(MycroftSkill):
                     require('BlanketContext').build())
     def handle_yes_blanket_intent(self, message):
         self.speak('Ok we have a blanket on its way to you.')
-        LOGGER.debug("The enclosure is: {}".format(self.config_core['enclosure'].get('platform', 'git_install')))
+        LOG.debug("The enclosure is: {}".format(self.config_core['enclosure'].get('platform', 'git_install')))
         if self.config_core['enclosure'].get('platform', 'git_install') == 'Mark_1':
             self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth.text("Blanket on its way")
