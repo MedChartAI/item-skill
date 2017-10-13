@@ -43,6 +43,7 @@ class ItemSkill(MycroftSkill):
         LOG.debug("The enclosure is: {}".format(self.config_core['enclosure'].get('platform', 'git_install')))
         if self.config_core['enclosure'].get('platform', 'git_install') == 'mycroft_mark_1':
             self.speak('Ok we have a blanket on its way to you.')
+            self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth_text("BLANKET ON WAY")
             time.sleep(300)
             self.enclosure.mouth_reset()
