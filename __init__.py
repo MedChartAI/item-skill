@@ -7,6 +7,7 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.skills.context import adds_context, removes_context
 from mycroft.util.log import getLogger
 from twilio.rest import Client
+import time
 
 
 __author__ = 'btotharye'
@@ -41,7 +42,7 @@ class ItemSkill(MycroftSkill):
         self.speak('Ok we have a blanket on its way to you.')
         if self.config_core['enclosure'].get('platform', 'git_install') == 'Mark_1': 
            self.enclosure.mouth.text("Blanket on its way")
-           sleep 10
+           time.sleep(10)
            self.enclosure.mouth.reset()
         
         #self.speak('Found room: {}'.format(self.settings['room_number']))
