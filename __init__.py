@@ -39,14 +39,15 @@ class ItemSkill(MycroftSkill):
     @intent_handler(IntentBuilder('YesBlanketIntent').require("Yes").
                     require('BlanketContext').build())
     def handle_yes_blanket_intent(self, message):
-        self.speak('Ok we have a blanket on its way to you.')
+
         LOG.debug("The enclosure is: {}".format(self.config_core['enclosure'].get('platform', 'git_install')))
         if self.config_core['enclosure'].get('platform', 'git_install') == 'mycroft_mark_1':
-            self.enclosure.deactivate_mouth_events()
+            self.speak('Ok we have a blanket on its way to you.')
             self.enclosure.mouth_text("BLANKET ON WAY")
             time.sleep(300)
             self.enclosure.mouth_reset()
-
+        else:
+            self.speak('Ok we have a blanket on its way to you.')
         '''
         #self.speak('Found room: {}'.format(self.settings['room_number']))
         account_sid = self.settings['account_sid']
