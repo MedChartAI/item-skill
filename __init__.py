@@ -40,6 +40,7 @@ class ItemSkill(MycroftSkill):
                     require('BlanketContext').build())
     def handle_yes_blanket_intent(self, message):
         self.speak('Ok we have a blanket on its way to you.')
+        LOGGER.debug("The enclosure is: {}".format(self.config_core['enclosure'].get('platform', 'git_install'))
         if self.config_core['enclosure'].get('platform', 'git_install') == 'Mark_1':
             self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth.text("Blanket on its way")
