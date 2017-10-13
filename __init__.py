@@ -39,6 +39,11 @@ class ItemSkill(MycroftSkill):
                     require('BlanketContext').build())
     def handle_yes_blanket_intent(self, message):
         self.speak('Ok we have a blanket on its way to you.')
+        if self.config_core['enclosure'].get('platform', 'git_install') == 'Mark_1': 
+           self.enclosure.mouth.text("Blanket on its way")
+           sleep 10
+           self.enclosure.mouth.reset()
+        
         #self.speak('Found room: {}'.format(self.settings['room_number']))
         account_sid = self.settings['account_sid']
         auth_token = self.settings['auth_token']
