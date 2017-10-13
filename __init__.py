@@ -45,7 +45,7 @@ class ItemSkill(MycroftSkill):
             self.speak('Ok we have a blanket on its way to you.')
             self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth_text("BLANKET ON WAY")
-            time.sleep(300)
+            time.sleep(60)
             self.enclosure.mouth_reset()
         else:
             self.speak('Ok we have a blanket on its way to you.')
