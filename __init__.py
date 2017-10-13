@@ -49,7 +49,6 @@ class ItemSkill(MycroftSkill):
             self.enclosure.mouth_reset()
         else:
             self.speak('Ok we have a blanket on its way to you.')
-        '''
         #self.speak('Found room: {}'.format(self.settings['room_number']))
         account_sid = self.settings['account_sid']
         auth_token = self.settings['auth_token']
@@ -57,11 +56,10 @@ class ItemSkill(MycroftSkill):
         to_number = self.settings['to_number']
         client = Client(account_sid, auth_token)
         message = client.messages.create(
-             to= to_number,
-             from_= from_number,
+             to=to_number,
+             from_=from_number,
              body="Room: {} would like a blanket".format(self.settings['room_number']))
         LOGGER.debug("This is the message: {}".format(message))
-        '''
 
     @intent_handler(IntentBuilder('NoBlanketIntent').require('No').build())
     def handle_no_blanket_intent(self, message):
