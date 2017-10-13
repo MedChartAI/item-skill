@@ -44,7 +44,7 @@ class ItemSkill(MycroftSkill):
         if self.config_core['enclosure'].get('platform', 'git_install') == 'mycroft_mark_1':
             self.enclosure.deactivate_mouth_events()
             self.enclosure.mouth_text("Blanket on its way")
-            time.sleep((self.LETTERS_PER_SCREEN + len("Blanket on its way")) * self.SEC_PER_LETTER)
+            time.sleep(30)
             self.enclosure.activate_mouth_events()
             self.enclosure.mouth_reset()
 
