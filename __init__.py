@@ -68,7 +68,6 @@ class ItemSkill(MycroftSkill):
                  to=to_number,
                  from_=from_number,
                  body="Room: {} would like a blanket".format(self.settings['room_number']))
-        LOGGER.debug("This is the message: {}".format(message))
 
     @intent_handler(IntentBuilder('NoBlanketIntent').require('No').build())
     def handle_no_blanket_intent(self, message):
